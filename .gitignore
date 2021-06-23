@@ -1,0 +1,7 @@
+# Project-related
+dist/*.js
+dist/*.js.map
+node_modules
+
+# VS Code-related
+.history

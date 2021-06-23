@@ -1,0 +1,11 @@
+{
+  "development": {
+    "demo_endpoint": "/api/endpoint"
+  },
+  "test": {
+    "demo_endpoint": "/test/demo_endpoint"
+  },
+  "production": {
+    "demo_endpoint": "//regionname-projectid.cloudfunctions.net/endpoint?key=value"
+  }
+}

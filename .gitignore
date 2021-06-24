@@ -4,4 +4,5 @@ dist/*.js.map
 node_modules
 
 # VS Code-related
+.vscode
 .history

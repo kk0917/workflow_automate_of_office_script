@@ -1,4 +1,4 @@
-function main(workbook: ExcelScript.Workbook) {
+function readRow(workbook: ExcelScript.Workbook) {
     // Get the current worksheet.
     let selectedSheet = workbook.getActiveWorksheet();
 
@@ -12,14 +12,6 @@ function main(workbook: ExcelScript.Workbook) {
 
     // Fit the width of all the used columns to the data.
     selectedSheet.getUsedRange().getFormat().autofitColumns();
-
-    // Get the value of cell D2.
-    // let range = selectedSheet.getRange("D2");
-    // console.log(range.getValues());
-
-    // Run the `Math.abs` function with the value at D2 and apply that value back to D2.
-    // let positiveValue = Math.abs(range.getValue() as number);
-    // range.setValue(positiveValue);
 
     // Get the values of the used range.
     let range       = selectedSheet.getUsedRange();

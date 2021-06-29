@@ -1,6 +1,6 @@
 function main(workbook: ExcelScript.Workbook) {
     // Get the current worksheet.
-    let selectedSheet = workbook.getActiveWorksheet();
+    const selectedSheet = workbook.getActiveWorksheet();
 
     /** Format the range to display numerical dollar amounts.
      * 
@@ -14,13 +14,13 @@ function main(workbook: ExcelScript.Workbook) {
     selectedSheet.getUsedRange().getFormat().autofitColumns();
 
     // Get the values of the used range.
-    let range       = selectedSheet.getUsedRange();
-    let rangeValues = range.getValues();
+    const range       = selectedSheet.getUsedRange();
+    const rangeValues = range.getValues();
 
     // Iterate over the fourth and fifth columns and set their values to their absolute value.
-    let rowCount = range.getRowCount();
+    const rowCount = range.getRowCount();
 
-    for (let i = 1; i < rowCount; i++) {
+    for (const i = 1; i < rowCount; i++) {
         // The column at index 3 is column "4" in the worksheet.
         if (rangeValues[i][3] != 0) {
             let positiveValue = Math.abs(rangeValues[i][3] as number);

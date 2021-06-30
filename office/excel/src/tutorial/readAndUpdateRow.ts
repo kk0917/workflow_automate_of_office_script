@@ -20,7 +20,7 @@ function main(workbook: ExcelScript.Workbook) {
   // Iterate over the fourth and fifth columns and set their values to their absolute value.
   const rowCount = range.getRowCount();
 
-  for (const i = 1; i < rowCount; i++) {
+  for (let i = 1; i < rowCount; i++) {
       // The column at index 3 is column "4" in the worksheet.
       if (rangeValues[i][3] != 0) {
           let positiveValue = Math.abs(rangeValues[i][3] as number);

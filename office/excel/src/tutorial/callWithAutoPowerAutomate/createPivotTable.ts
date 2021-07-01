@@ -4,7 +4,7 @@ function main(workbook: ExcelScript.Workbook) {
 
   // Add data and create a table
   emailsSheet.getRange("A1:D1").setValues([
-      ["Date", "Day of the week", "Email address", "Subject"]
+    ["Date", "Day of the week", "Email address", "Subject"]
   ]);
   let newTable = workbook.addTable(emailsSheet.getRange("A1:D2"), true);
   newTable.setName("EmailTable");

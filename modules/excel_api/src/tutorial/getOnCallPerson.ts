@@ -10,13 +10,15 @@ function main(workbook: ExcelScript.Workbook) : string {
 
   // Look for the first row where today's date is between the row's start and end dates.
   const currentDate = new Date();
+
   for (let row = 0; row < tableValues.length; row++) {
-      const startDate = convertDate(tableValues[row][2] as number);
-      const endDate = convertDate(tableValues[row][3] as number);
-      if (startDate <= currentDate && endDate >= currentDate) {
-          // Return the first matching email address.
-          return tableValues[row][1].toString();
-      }
+    const startDate: Object = convertDate(tableValues[row][2] as number);
+    const endDate:   Object = convertDate(tableValues[row][3] as number);
+
+    if (startDate <= currentDate && endDate >= currentDate) {
+      // Return the first matching email address.
+      return tableValues[row][1].toString();
+    }
   }
 }
 

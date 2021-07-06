@@ -12,8 +12,8 @@ function main(workbook: ExcelScript.Workbook) : string {
   const currentDate = new Date();
 
   for (let row = 0; row < tableValues.length; row++) {
-    const startDate: Object = convertDate(tableValues[row][2] as number);
-    const endDate:   Object = convertDate(tableValues[row][3] as number);
+    const startDate: Date = convertDate(tableValues[row][2] as number);
+    const endDate:   Date = convertDate(tableValues[row][3] as number);
 
     if (startDate <= currentDate && endDate >= currentDate) {
       // Return the first matching email address.
@@ -22,8 +22,12 @@ function main(workbook: ExcelScript.Workbook) : string {
   }
 }
 
-// Convert the Excel date to a JavaScript Date object.
-function convertDate(excelDateValue: number) {
-  const javaScriptDate = new Date(Math.round((excelDateValue - 25569) * 86400 * 1000));
-  return javaScriptDate;
+/** Convert the Excel date to a JavaScript Date object
+ * 
+ * @param   number excelDateValue 
+ * @returns Date obj that converted js date from excel date
+ */
+function convertDate(excelDateValue: number): Date {
+  const jsDate = new Date(Math.round((excelDateValue - 25569) * 86400 * 1000));
+  return jsDate;
 }

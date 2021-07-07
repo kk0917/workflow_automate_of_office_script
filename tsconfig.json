@@ -4,6 +4,6 @@
     "target": "es5",   // TS converts to ECMAScript 5
     "module": "es2015" // TS modules outputs as ES Modules
   },
-  "include": ["office/excel/src/*"],
+  "include": ["modules/excelApi/src/*"],
   "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }
